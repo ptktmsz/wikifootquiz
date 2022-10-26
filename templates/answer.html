@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="row justify-content-center p-4">
+        <div class="col-auto">
+        <b>Place of birth: </b>{{ pob }}
+        <br><br>
+        <b>Position: </b>{{ position }}
+        <br><br>
+        {% autoescape off %}
+        {{ question }}
+        {% endautoescape %}
+        </div>
+        <div class="col-auto">
+            <p><b>Your guesses:</b></p>
+            {% for name in answered %}
+            {% autoescape off %}
+            <p> {{ name }} </p>
+            {% endautoescape %}
+            {% endfor %}
+        </div>
+    </div>
+    <div class="row justify-content-center p-4">
+      <p>{{ response }}</p>
+    </div>
+    <div class="row justify-content-center">
+      <form action="/ask" method="get">
+        <button type="submit">Next question</button>
+      </form>
+    </div>
+{% endblock %}
