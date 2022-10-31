@@ -7,6 +7,7 @@ class QuizBrain:
         self.score = 0
         self.player_list = player_list
         self.current_player = None
+        self.answered = []
 
     def still_has_questions(self):
         return self.question_number < len(self.player_list)
@@ -21,6 +22,10 @@ class QuizBrain:
         correct_answer = unidecode.unidecode(self.current_player.name.lower())
         if user_answer == correct_answer:
             self.score += 1
+            name_to_append = "<p class='true'>" + str(self.current_player.name) + "</p>"
+            self.answered.append(name_to_append)
             return f"Yes! That's the correct answer. Your score is {self.score}"
         else:
+            name_to_append = "<p class='false'>" + str(self.current_player.name) + "</p>"
+            self.answered.append(name_to_append)
             return f"No! The correct answer is {self.current_player.name}. Your score is {self.score}"
