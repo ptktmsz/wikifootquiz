@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="container">
+      <div class="row justify-content-center p-4 h2">Rules are here</div>
+      <div class="row justify-content-center p-2 h4">Rule nr 1</div>
+      <div class="row justify-content-center p-2 h4">Rule nr 2</div>
+      <div class="row justify-content-center p-2 h4">Rule nr 3</div>
+    </div>
+    <div class="container">
+      <div class="row justify-content-center p-4">
+        <a class="btn btn-primary" href=" {{ url_for('ask') }} ">Start</a>
+      </div>
+    </div>
+{% endblock %}
