@@ -1,0 +1,6 @@
+requests~=2.27.1
+beautifulsoup4~=4.11.1
+pandas~=1.4.2
+flask~=2.2.2
+unidecode~=1.2.0
+colorama~=0.4.4
